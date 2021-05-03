@@ -1,0 +1,18 @@
+Train data set error -
+Dev data set error - 
+
+if the NN did not work well on the train data set - high bias (under fitting)
+if the NN did not work well on the dev data set - high variance (overfitting)
+
+to improve bias -> deeper neural network (more layers)
+to improve variance -> more data set 
+to improve variance -> regularization (comes with a tradeoff on the bias though).
+
+improve bias -> more hidden layers
+                longer train (Epoch)
+                advance optimization algorithms*
+                NN architecture
+once bias is reduced 
+improve variance -> more data 
+                    regularization
+                    NN architecture
