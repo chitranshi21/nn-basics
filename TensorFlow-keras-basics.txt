@@ -1,0 +1,37 @@
+A model has a life-cycle
+
+1) Define the model
+2) Compile the model
+3) Fit the model
+4) Evaluate the model
+5) Make Predictions
+
+Define model - configure each layer with number of nodes and activation function and connect the layers
+Sequential API or Functional API
+
+Compile the model - select the loss function (MSE, cross-entropy), select optimization algorithms
+ (stochastic gradient decent or ADAM are some example)
+ Also include any performance metrices that you might want to keep track of during training
+ This will take the model and other parameters and compile the model with data structure 
+tf.keras.optimiziers - list of supported optimizer
+    opt = SGD(learning_rate=0.01, momentum=0.9)
+    model.compile(optimizer=opt, loss='binary_crossentropy')
+The 3 most common loss functions are - 
+‘binary_crossentropy‘ for binary classification.
+‘sparse_categorical_crossentropy‘ for multi-class classification.
+‘mse‘ (mean squared error) for regression.
+https://www.tensorflow.org/api_docs/python/tf/keras/losses
+Metrices - list of strings to evaluate pridictions 
+(basically this is for us to see how well our model worked)
+tensorflow.org/api_docs/python/tf/keras/metrics
+model.compile(optimizer='sgd', loss='binary_crossentropy', metrics=['accuracy'])
+
+
+Fit the model - allows you to configure training configurations
+epochs - number of runs, batch size - number of samples in each epoch to calculate the loss
+model.fit(X, y, epochs=100, batch_size=32)
+
+Evaluate the model - Runs the model against test samples/ no training happens here 
+so it is much faster
+loss = model.evaluate(X, y)
+
